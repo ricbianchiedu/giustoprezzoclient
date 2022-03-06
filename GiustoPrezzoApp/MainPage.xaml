@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GiustoPrezzoApp.MainPage">
+
+    <ScrollView>
+        <StackLayout x:Name="Pannello">
+            <Frame x:Name="PannelloEsito" BackgroundColor="#2196F3"  Padding="10" CornerRadius="0">
+                <Label x:Name="Messaggio" Text="&#10;Il Giusto Prezzo!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label x:Name="lblCategoria" Text="Categoria: " HorizontalTextAlignment="Center" TextColor="Black" FontSize="18"/>
+            <Label x:Name="DescrizioneArticolo" Margin="30,30,30,30">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Descrizione articolo"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Image x:Name ="Immagine" WidthRequest="250" HorizontalOptions="Center"/>
+            <StackLayout WidthRequest="300" HorizontalOptions="Center">
+                <StackLayout x:Name="PrezzoUno" Orientation="Horizontal" HorizontalOptions="Center">
+                    <ImageButton x:Name="P1" ClassId="P1" WidthRequest="60" Clicked="CheckPrezzo"/>
+                    <Label x:Name="lblP1" TextColor="#2196F3" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout x:Name="PrezzoDue" Orientation="Horizontal" HorizontalOptions="Center">
+                    <ImageButton x:Name="P2" ClassId="P2" WidthRequest="60" Clicked="CheckPrezzo"/>
+                    <Label x:Name="lblP2" TextColor="#2196F3" HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Bold"  VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout x:Name="PrezzoTre" Orientation="Horizontal" HorizontalOptions="Center">
+                    <ImageButton x:Name="P3" ClassId="P3" WidthRequest="60" Clicked="CheckPrezzo"/>
+                    <Label x:Name="lblP3" TextColor="#2196F3" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <ImageButton x:Name="PF" ClassId="Avanti" Clicked="Avanti" WidthRequest="60" IsVisible="false"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
+

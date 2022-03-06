@@ -1,0 +1,12 @@
+﻿iPhone Screen Size
+https://www.ios-resolution.com
+
+(iPhoneX 375*812 - 1/3 dei pixel fisici)
+
+Xamarin Forms
+Embedded Images
+https://stackoverflow.com/questions/49931868/xamarin-form-using-embedded-images
+
+Xamarin Forms
+Message Box
+https://docs.microsoft.com/it-it/xamarin/xamarin-forms/user-interface/pop-ups

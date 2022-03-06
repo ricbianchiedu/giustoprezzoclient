@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GiustoPrezzoApp.Errore">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Image x:Name="imgErrore" Margin="30"  MinimumWidthRequest="300"/>
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="Messaggio" Text="&#10;Il server non risponde:&#10;riprova più tardi...&#10;" HorizontalTextAlignment="Center" TextColor="#2196F3" FontSize="36"/>
+            </StackLayout>
+            <StackLayout>
+                <ImageButton x:Name="btnReload" WidthRequest="80" Clicked="btnReload_OnClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

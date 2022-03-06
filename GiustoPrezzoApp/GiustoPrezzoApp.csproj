@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Immagini\" />
+    <None Remove="Immagini\GiustoPrezzo.png" />
+    <None Remove="Immagini\btn2.png" />
+    <None Remove="Immagini\btn3.png" />
+    <None Remove="Immagini\btn4.png" />
+    <None Remove="Immagini\btn5.png" />
+    <None Remove="Immagini\bntP1.png" />
+    <None Remove="Immagini\btn1.png" />
+    <None Remove="Immagini\btnAvanti.png" />
+    <None Remove="Immagini\btnP1.png" />
+    <None Remove="Immagini\btnP2.png" />
+    <None Remove="Immagini\btnP3.png" />
+    <None Remove="Immagini\GiocaAncora.png" />
+    <None Remove="Immagini\Errore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Immagini\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Immagini\GiustoPrezzo.png" />
+    <EmbeddedResource Include="Immagini\btn2.png" />
+    <EmbeddedResource Include="Immagini\btn3.png" />
+    <EmbeddedResource Include="Immagini\btn4.png" />
+    <EmbeddedResource Include="Immagini\btn5.png" />
+    <EmbeddedResource Include="Immagini\btn1.png" />
+    <EmbeddedResource Include="Immagini\btnAvanti.png" />
+    <EmbeddedResource Include="Immagini\btnP1.png" />
+    <EmbeddedResource Include="Immagini\btnP2.png" />
+    <EmbeddedResource Include="Immagini\btnP3.png" />
+    <EmbeddedResource Include="Immagini\GiocaAncora.png" />
+    <EmbeddedResource Include="Immagini\Errore.png" />
+  </ItemGroup>
+</Project>
