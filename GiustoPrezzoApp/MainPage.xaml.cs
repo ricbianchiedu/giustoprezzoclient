@@ -128,7 +128,7 @@ namespace GiustoPrezzoApp
             }
             catch (Exception ex)
             {
-                App.Current.MainPage = new Errore();
+                Immagine.Source = ImageSource.FromResource("GiustoPrezzoApp.Immagini.Errore.png");
             }
 
             DescrizioneArticolo.Text = ArticoliList[prossimoArticolo].Descrizione;
