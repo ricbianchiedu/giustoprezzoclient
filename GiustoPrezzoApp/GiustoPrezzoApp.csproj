@@ -31,6 +31,9 @@
     <None Remove="Immagini\btnP3.png" />
     <None Remove="Immagini\GiocaAncora.png" />
     <None Remove="Immagini\Errore.png" />
+    <None Remove="System.Configuration.ConfigurationManager" />
+    <None Remove="App.config" />
+    <None Remove="urlApi.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Immagini\" />
@@ -48,5 +51,8 @@
     <EmbeddedResource Include="Immagini\btnP3.png" />
     <EmbeddedResource Include="Immagini\GiocaAncora.png" />
     <EmbeddedResource Include="Immagini\Errore.png" />
+    <EmbeddedResource Include="urlApi.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

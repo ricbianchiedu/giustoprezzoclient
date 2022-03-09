@@ -5,16 +5,18 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
+using System.IO;
 using Xamarin.Forms;
 
 namespace GiustoPrezzoApp
 {
+
     public partial class SplashPage : ContentPage
     {
         HttpClient client = new HttpClient();
         public Task<List<Categoria>> Categorie = null;
         public List<Categoria> CategorieList = null;
+        string urlText = "";
 
         public SplashPage()
         {
@@ -41,7 +43,19 @@ namespace GiustoPrezzoApp
 
         public async Task<List<Categoria>> CaricaCategorie()
         {
-            string indirizzoWebApi = "https://giustoprezzo.azurewebsites.net/categorie";
+            //Recupera l'URL della WebApi dal file di configurazione
+            //Il file urlApi.txt contiene una sola riga ti testo con l'URL.
+            //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
+
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SplashPage)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("GiustoPrezzoApp.urlApi.txt");
+            string indirizzoWebApi = "";
+            using (var reader = new System.IO.StreamReader(stream))
+            {
+                urlText = reader.ReadToEnd();
+                indirizzoWebApi = urlText + "/categorie";
+            }
+
             //Azzera gli Header HTTP
             client.DefaultRequestHeaders.Accept.Clear();
 
@@ -56,7 +70,7 @@ namespace GiustoPrezzoApp
             //restituisce una stringa.
             //await può essere utilizzato solo all'interno di un metodo async
             //Qui attende il completamento del task
-            //var stringTask = await client.GetStringAsync("https://giustoprezzo.azurewebsites.net/categoria");
+            //var stringTask = await client.GetStringAsync("url_da_utilizzare");
             string stringTask = "";
 
             try
@@ -92,7 +106,7 @@ namespace GiustoPrezzoApp
                 tmpCat = CategorieList[pkrCategoria.SelectedIndex];
             }
 
-            Stato s = new Stato(numArt, tmpCat);
+            Stato s = new Stato(numArt, tmpCat, urlText);
             App.Current.MainPage = new MainPage(s);
         }
     }

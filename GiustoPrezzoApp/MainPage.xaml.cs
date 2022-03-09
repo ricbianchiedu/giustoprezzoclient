@@ -14,6 +14,7 @@ namespace GiustoPrezzoApp
     public partial class MainPage : ContentPage
     {
         int nArt = 1;
+        string url = "";
         int indovinati = 0;
         int prossimoArticolo = 0;
         bool bottoneCreato = false;
@@ -33,10 +34,11 @@ namespace GiustoPrezzoApp
             P3.Source = ImageSource.FromResource("GiustoPrezzoApp.Immagini.btnP3.png");
             PF.Source = ImageSource.FromResource("GiustoPrezzoApp.Immagini.btnAvanti.png");
 
+            url = s.urlApi;
             Articoli = CaricaArticoli(s);
             nArt = s.NumeroArticoli;
             lblCategoria.Text = lblCategoria.Text + s.CategoriaScelta.Descrizione;
-
+            
             Gioco();
 
         }
@@ -193,7 +195,7 @@ namespace GiustoPrezzoApp
         public async Task<List<Articolo>> CaricaArticoli(Stato stato)
         {
             string indirizzoApiConParametri = "";
-            string indirizzoApi = "https://giustoprezzo.azurewebsites.net";
+            string indirizzoApi = url;
             //Azzera gli Header HTTP
             client.DefaultRequestHeaders.Accept.Clear();
 
