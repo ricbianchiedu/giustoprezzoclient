@@ -13,8 +13,6 @@ namespace GiustoPrezzoApp
 
         //https://docs.microsoft.com/en-gb/ef/ef6/fundamentals/relationships?redirectedfrom=MSDN
 
-        public override string ToString()
-        => $"{Descrizione} {GiustoPrezzo} {PrezzoUno} {PrezzoDue} {UrlImmagine}";
     }
 }
 

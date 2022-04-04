@@ -107,6 +107,7 @@ namespace GiustoPrezzoApp
             }
 
             Stato s = new Stato(numArt, tmpCat, urlText);
+           
             App.Current.MainPage = new MainPage(s);
         }
     }

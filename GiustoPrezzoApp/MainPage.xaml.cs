@@ -211,13 +211,13 @@ namespace GiustoPrezzoApp
             //await può essere utilizzato solo all'interno di un metodo async
             //Qui attende il completamento del task
             //var stringTask = await client.GetStringAsync("https://giustoprezzo.azurewebsites.net/" + nArt.ToString());
-            if (stato.CategoriaScelta.CategoriaID == 1)
+            if (stato.CategoriaScelta.CategoriaWebID == 1)
             {
                 indirizzoApiConParametri = indirizzoApi + "/" + stato.NumeroArticoli.ToString();
             }   
             else
             {
-                indirizzoApiConParametri = indirizzoApi + "/" + stato.NumeroArticoli.ToString() + "/" + stato.CategoriaScelta.CategoriaID.ToString();
+                indirizzoApiConParametri = indirizzoApi + "/" + stato.NumeroArticoli.ToString() + "/" + stato.CategoriaScelta.CategoriaWebID.ToString();
             }
 
             string stringTask = "";
