@@ -165,7 +165,15 @@ namespace GiustoPrezzoApp
         private string FormattaPrezzo(float prezzo)
         {
             string tmpPrezzo = prezzo.ToString();
-            string[] partiPrezzo = tmpPrezzo.Split('.');
+            string[] partiPrezzo = null;
+            //Workaround per diverso comportamento deserializzazione che in
+            //alcuni casi restituisce un separatore decimale rappresentato da
+            //un . e in altri casi da una ,
+            if (tmpPrezzo.IndexOf('.') >= 0)
+                partiPrezzo = tmpPrezzo.Split('.');
+            else
+                partiPrezzo = tmpPrezzo.Split(',');
+
             if (partiPrezzo.Length < 2)
             {
                 tmpPrezzo = tmpPrezzo + ".00 €";
